@@ -1,0 +1,29 @@
+.custom-textbox-icon{    
+    width: 100px !important;
+    min-height: max-content !important;
+    padding: 4px;
+    color: #000;    
+    text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.8), 
+                -1px -1px 0 rgba(255, 255, 255, 0.8), 
+                1px -1px 0 rgba(255, 255, 255, 0.8), 
+                -1px 1px 0 rgba(255, 255, 255, 0.8);
+    /* color: #FFF;    
+    text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.8), 
+                -1px -1px 0 rgba(0, 0, 0, 0.8), 
+                1px -1px 0 rgba(0, 0, 0, 0.8), 
+                -1px 1px 0 rgba(0, 0, 0, 0.8);; */
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    font-size:14px;
+    line-height: normal;
+  
+}
+.leaflet-textbox:focus-visible{
+    outline: none;
+    outline-offset:none;
+}
+.leaflet-control-add-text a {
+    font-size: 16px;
+}
