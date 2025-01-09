@@ -100,18 +100,18 @@ You can customize the appearance of textboxes and buttons by overriding these CS
     width: 100px !important;
     min-height: max-content !important;
     padding: 4px;
-    color: #000;    
+    /* color: #000;    
     text-shadow: 
                 1px 1px 0 rgba(255, 255, 255, 0.8), 
                 -1px -1px 0 rgba(255, 255, 255, 0.8), 
                 1px -1px 0 rgba(255, 255, 255, 0.8), 
-                -1px 1px 0 rgba(255, 255, 255, 0.8);
-    /* color: #FFF;    
+                -1px 1px 0 rgba(255, 255, 255, 0.8); */
+    color: #FFF;
     text-shadow: 
-                1px 1px 0 rgba(255, 255, 255, 0.8), 
+                1px 1px 0 rgba(0, 0, 0, 0.8), 
                 -1px -1px 0 rgba(0, 0, 0, 0.8), 
                 1px -1px 0 rgba(0, 0, 0, 0.8), 
-                -1px 1px 0 rgba(0, 0, 0, 0.8);; */
+                -1px 1px 0 rgba(0, 0, 0, 0.8);
     font-weight: bold;
     letter-spacing: 1.2px;
     font-size:14px;
