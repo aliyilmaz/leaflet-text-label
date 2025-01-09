@@ -138,11 +138,11 @@
                         marker.getElement().setAttribute('data-geojson', JSON.stringify(geojsonFeature));
                         this.fire('textSaved', { geojson: geojsonFeature });
 
-                        // Dinleme ve güncelleme işlemi
+                        //Listening and update process
                         marker.on('move', (event) => {
                             const newLatLng = event.latlng;
                             geojsonFeature.geometry.coordinates = [newLatLng.lng, newLatLng.lat];
-                            geojsonFeature.properties.type = 'Label';  // type değerini koru
+                            geojsonFeature.properties.type = 'Label';  // Protect Type value
                             const index = LabelPointJsonArray.findIndex((feature) => feature.properties.id === geojsonFeature.properties.id);
                             if (index !== -1) {
                                 LabelPointJsonArray[index] = geojsonFeature;
@@ -202,11 +202,11 @@
                     
                     marker.getElement().setAttribute('data-geojson', JSON.stringify(geojsonFeature));
 
-                    // Dinleme ve güncelleme işlemi
+                    // Listening and update process
                     marker.on('move', (event) => {
                         const newLatLng = event.latlng;
                         geojsonFeature.geometry.coordinates = [newLatLng.lng, newLatLng.lat];
-                        geojsonFeature.properties.type = 'Label';  // type değerini koru
+                        geojsonFeature.properties.type = 'Label';  //Protect Type value
                         const index = LabelPointJsonArray.findIndex((feature) => feature.properties.id === geojsonFeature.properties.id);
                         if (index !== -1) {
                             LabelPointJsonArray[index] = geojsonFeature;
@@ -264,16 +264,16 @@
                     this.fire('custom-textbox-icon-click', { layer: e.layer, containerPoint: event.containerPoint });
                 }, this);
     
-                // Dinleme ve güncelleme işlemi
+                // Listening and update process
                 e.layer.on('dragend', (event) => {
                     const newLatLng = event.target.getLatLng();
                     const geojsonFeature = e.layer.toGeoJSON();
                     geojsonFeature.geometry.coordinates = [newLatLng.lng, newLatLng.lat];
-                    geojsonFeature.properties.type = 'Label';  // type değerini koru
+                    geojsonFeature.properties.type = 'Label';  // Protect Type value
                     geojsonFeature.properties.text = e.layer.options.icon.options.html,
                     geojsonFeature.properties.id = e.layer._leaflet_id;
                     
-                    // Eski özellik varsa güncelle, yoksa ekle
+                    // Update if there is old feature, or add it
                     const index = LabelPointJsonArray.findIndex((feature) => feature.properties.id === geojsonFeature.properties.id);
                     if (index !== -1) {
                         LabelPointJsonArray[index] = geojsonFeature;
@@ -282,7 +282,7 @@
                     }                    
                     e.layer.getElement().setAttribute('data-geojson', JSON.stringify(geojsonFeature));
     
-                    // Katmanı yeniden ekleyerek, eski konumu temizle                    
+                    // By adding the layer again, clean the old location                 
                     this.addLayer(e.layer);
                 });
             }
